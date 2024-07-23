@@ -62,10 +62,10 @@ Function({
 	
 	
 Function({
-	pattern: 'kick ?(.*)',
+	pattern: 'kickall ?(.*)',
 	fromMe: true,
     onlyGroup: true,
-	desc: 'kick someone in the group. Reply to message or tag a person to use command.',
+	desc: 'kick all members in the group. Reply to message or tag a person to use command.',
 	type: 'group'
 }, async (message, match, client) => {
 	const isbotAdmin = await isBotAdmins(message, message.client)

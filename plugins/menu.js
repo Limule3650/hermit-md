@@ -41,29 +41,29 @@ Function({
 			commandslist[command.type].push((match.length >= 3 ? (HANDLER + mmatch) : command.pattern).trim())
 		}
 	})
-	let msg = `╭━━━〔 ${BOT_INFO.split(";")[0]} ⁩〕━━━┈⊷
-┃✵╭──────────────
-┃✵│ Owner : ${BOT_INFO.split(";")[1]}
-┃✵│ User : ${m.pushName.replace( /[\r\n]+/gm, "" )}
-┃✵│ Plugins : ${commands.length}
-┃✵│ Runtime : ${runtime(process.uptime())}
-┃✵│ Mode : ${MODE}
-┃✵│ Platform : ${os.platform()}
-┃✵│ Ram : ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
-┃✵│ Version : ${VERSION}
-┃✵╰──────────────
-╰━━━━━━━━━━━━━━━┈⊷
+	let msg = `╭━━━〔 ${BOT_INFO.split(";")[0]} ⁩〕━━━━✦
+    ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━✦
+┃𒊹︎︎︎𝑹│ Owner : ${BOT_INFO.split(";")[1]}
+┃𒊹︎︎︎𝑹│ User : ${m.pushName.replace( /[\r\n]+/gm, "" )}
+┃𒊹︎︎︎𝑹│ Plugins : ${commands.length}
+┃𒊹︎︎︎𝑹│ Runtime : ${runtime(process.uptime())}
+┃𒊹︎︎︎𝑹│ Mode : ${MODE}
+┃𒊹︎︎︎𝑹│ Platform : ${os.platform()}
+┃𒊹︎︎︎𝑹│ Ram : ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
+┃𒊹︎︎︎𝑹│ Version : ${VERSION}
+|𒊹︎︎︎𝑹╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━✦
+╰━━━━━━━━━━━━━━✦
 `
 	for (const command in commandslist) {
-		msg += `╭─────────────┈⊷
+		msg += `╭─────────────✦
 `
 		msg += `│ 「 *${await Fancy(command.toUpperCase(), 32)}* 」 `
-		msg += `╰┬────────────┈⊷\n┌┤\n`
+		msg += `╰┬────────────✦\n┌┤\n`
 		for (const plugin of commandslist[command])
 			msg += `││◦➛ ${await Fancy(plugin.toLowerCase(), 32)}\n`
-		msg += `│╰────────────┈⊷
+		msg += `│╰────────────✦
 `
-		msg += `╰─────────────┈⊷
+		msg += `╰─────────────✦
 `
 	}
 	await message.send(msg);
